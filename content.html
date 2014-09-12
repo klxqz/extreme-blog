@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="column col-xs-12 col-sm-3" id="left_column"><!-- Block layered navigation module -->
+        {include file="./sidebar.html"}
+    </div>
+    <div class="center_column col-xs-12 col-sm-9" id="center_column">       
+
+        {if empty($posts) && $wa->currentUrl() == $wa_app_url}
+
+            <div class="welcome">
+                <h1>[`Welcome to your new blog!`]</h1>
+                <p>{sprintf('[`Start by <a href="%s">writing a post</a> in your blog backend.`]', $wa_backend_url|cat:'blog/')}</p>
+            </div>
+
+        {else}
+
+            {$content} 
+
+        {/if}
+
+    </div><!-- #center_column -->
+</div><!-- .row -->
+
+
+
